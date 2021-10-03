@@ -32,7 +32,7 @@ class MmainWindow( tk.Tk ):
 		self.lbl = tk.Label(self.lft, image=self.icon, bg='#ddd',text=f"Version : {self.get_version()}" ,compound="top")
 		self.lbl.pack(pady=15)
 
-		tk.Button(self.lft, text='Designed by Elsker Elvish',command=self.not_avail, bd=0, bg='#ddd').pack(side="bottom", fill='x')	
+		tk.Button(self.lft, text='Designed by Elsker Elvish',command= web_open("https://www.instagram.com/elsker_elvish.py/") , bd=0, bg='#ddd').pack(side="bottom", fill='x')	
 		tk.Button(self.lft, text='Check For Updates..',command=self.not_avail,fg='blue', bd=0, bg='#ddd').pack(side="bottom", fill='x')
 		tk.Button(self.lft, text='GitHub link..',command=lambda : web_open("https://github.com/ElskerElvish/TBomb_GUI"),fg='blue', bd=0, bg='#ddd').pack(side="bottom", fill='x')
 		tk.Button(self.lft, text='About..',command=self.not_avail,fg='blue', bd=0, bg='#ddd').pack(side="bottom", fill='x')
@@ -83,53 +83,3 @@ class MmainWindow( tk.Tk ):
 if __name__ == "__main__":
 	Application = MmainWindow()
 	Application.mainloop()
-
-# from tkinter import *
-# import time, datetime
-# from time import gmtime, strftime
-
-# root = Tk()
-# # Window Attributes
-# root.overrideredirect(1)
-# root.wm_attributes("-transparentcolor", "gray99")
-
-# running = True
-
-# # close window
-# def close(event):
-#     global running
-#     running = False
-
-# root.bind('<Escape>', close)
-
-# screen_width = root.winfo_screenwidth()
-# screen_height = root.winfo_screenheight()
-
-# timeframe = Frame(root, width=screen_width, height=screen_height, bg="gray99")
-# timeframe.grid(row=0,column=0)
-
-# tkintertime = StringVar()
-# timelabel = Label(timeframe, text='', fg="black", bg="gray99", font=("Arial", 40))
-# timelabel.place(y=screen_height/2 - 300, x=screen_width/2 , anchor="center")
-
-# tkinterdate = StringVar()
-# datelabel = Label(timeframe, text='', fg="black", bg="gray99", font=("Arial", 15))
-# datelabel.place(y=screen_height/2 -200, x=screen_width/2, anchor="center")
-
-
-# def get_meridian():
-
-# 	m = strftime("%H:%M:%S").split(":")[0]
-# 	meridian = ""
-# 	if int(m) >= 12:
-# 		meridian = "PM"
-# 	else:
-# 		meridian = "AM"
-# 	return meridian
-
-# while running:
-#     timelabel['text'] = strftime("%I:%M:%S")+ " " + get_meridian()
-#     datelabel['text'] = strftime("%A, %e %B")
-#     root.update_idletasks()
-#     root.update()
-#     time.sleep(1)
